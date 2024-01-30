@@ -7,7 +7,7 @@ w3 = web3.Web3(web3.HTTPProvider('https://eth.llamarpc.com'))
 
 # 连接到Redis数据库
 try:
-    redis_conn = redis.StrictRedis(host='205.234.234.133', port=6379, decode_responses=True, password='boom_crypto', db=1)
+    redis_conn = redis.StrictRedis(host='localhost', port=6379, decode_responses=True, password='boom_crypto', db=1)
 except Exception as e:
     print('数据库连接失败，请检查!')
     exit()

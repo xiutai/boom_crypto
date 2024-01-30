@@ -26,7 +26,7 @@ def get_address(bnum):
 
 # 连接到Redis数据库
 try:
-    redis_conn = redis.StrictRedis(host='205.234.234.133', port=6379, decode_responses=True, password='boom_crypto', db=0)
+    redis_conn = redis.StrictRedis(host='localhost', port=6379, decode_responses=True, password='boom_crypto', db=0)
 except Exception as e:
     print('数据库连接失败，请检查!')
     exit()
@@ -75,7 +75,7 @@ def go():
         print(f'当前正在同步第 {s} 个区块', address)
 
 threads = []
-for x in range(50):  # 多线程开启
+for x in range(20):  # 多线程开启
     t = threading.Thread(target=go)
     threads.append(t)
     t.start()
